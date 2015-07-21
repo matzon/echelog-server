@@ -1,6 +1,7 @@
 /*!
  * Module dependencies.
  */
+var utils = require('../utils.js')
 var mongoose = require('mongoose');
 var Network = mongoose.model('Network');
 
@@ -24,7 +25,8 @@ exports.listNetworks = function (req, res, next) {
  */
 exports.createNetwork = function (req, res, next) {
     var networkModel = new Network(req.body);
-    networkModel.save(function () {
+    utils.validateAndSave(res, next, networkModel, function (err) {
+        if (err) return next(err);
         res.json(req.body);
         next();
     });
