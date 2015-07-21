@@ -1,0 +1,20 @@
+{
+  "name": "echelog-server",
+  "version": "0.0.1",
+  "description": "REST API for accessing echelog",
+  "main": "server.js",
+  "author": "Brian Matzon <brian@matzon.dk>",
+  "dependencies": {
+    "mongoose": "^4.0.8",
+    "restify": "^3.0.3"
+  },
+  "scripts": {
+    "start": "NODE_PATH=./config NODE_ENV=development node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matzon/echelog-server.git"
+  },
+  "devDependencies": {},
+  "license": "MIT"
+}
