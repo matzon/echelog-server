@@ -1,7 +1,7 @@
 /*!
  * Module dependencies.
  */
-var utils = require('../utils.js')
+var utils = require('../utils')
 var mongoose = require('mongoose');
 var Network = mongoose.model('Network');
 

@@ -1,8 +1,8 @@
 /*!
  * Module dependencies.
  */
-var networksController = require('../app/controllers/networks.js');
-var channelsController = require('../app/controllers/channels.js');
+var networksController = require('../app/controllers/networks');
+var channelsController = require('../app/controllers/channels');
 
 /*!
  * Module exports.

@@ -31,5 +31,7 @@ function validateAndSave(res, next, model, cb) {
  * Module exports.
  */
 
-module.exports.sendValidationErrors = sendValidationErrors;
-module.exports.validateAndSave = validateAndSave;
+module.exports = {
+    sendValidationErrors: sendValidationErrors,
+    validateAndSave: validateAndSave
+};
