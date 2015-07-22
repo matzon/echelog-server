@@ -1,8 +1,9 @@
 /*!
  * Module dependencies.
  */
-var networksController = require('../app/controllers/networks');
-var channelsController = require('../app/controllers/channels');
+var networksController      = require('../app/controllers/networks');
+var channelsController      = require('../app/controllers/channels');
+var logEntriesController    = require('../app/controllers/logentries');
 
 /*!
  * Module exports.
@@ -20,4 +21,8 @@ module.exports = function (server) {
     server.get('/channels/:id', channelsController.findChannelById);
     server.put('/channel/:id', channelsController.updateChannel);
     server.del('/channel/:id', channelsController.removeChannel);
+
+    server.post('/logs', logEntriesController.createLogEntry);
+    server.get('/logs/:channel/:date', logEntriesController.listLogEntriesByChannelAndDate);
+
 };
