@@ -30,7 +30,7 @@ server.use(restify.gzipResponse());
 
 // bootstrap models
 fs.readdirSync(join(__dirname, 'app/models')).forEach(function (file) {
-    if (~file.indexOf('.js')) require(join(__dirname, 'app/models', file));
+    if (~file.indexOf('.js')) require(join(__dirname, 'app/models', file))(mongoose);
 });
 
 // setup routes

@@ -9,12 +9,17 @@
     "restify": "^3.0.3"
   },
   "scripts": {
-    "start": "NODE_PATH=./config NODE_ENV=development node server.js"
+    "start": "NODE_PATH=./config NODE_ENV=development node server.js",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/matzon/echelog-server.git"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.x",
+    "mockgoose": "^2.0.3"
+  },
   "license": "MIT"
 }

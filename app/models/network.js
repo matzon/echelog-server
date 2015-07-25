@@ -1,15 +1,17 @@
 /*!
- * Module dependencies.
+ * Module exports.
  */
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 
-/* schema definition */
-var NetworkSchema = new Schema({
-    name: {type: String, default: '', trim: true}
-});
+module.exports = function (mongoose) {
+    var Schema = mongoose.Schema;
 
-/* validation */
-NetworkSchema.path('name').required(true, 'Network name cannot be empty');
+    /* schema definition */
+    var NetworkSchema = new Schema({
+        name: {type: String, default: '', trim: true}
+    });
 
-mongoose.model('Network', NetworkSchema);
+    /* validation */
+    NetworkSchema.path('name').required(true, 'Network name cannot be empty');
+
+    return mongoose.model('Network', NetworkSchema);
+};
