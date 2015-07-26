@@ -1,9 +1,9 @@
+'use strict';
+
 /* jshint -W030 */
 var expect = require('chai').expect;
 
 describe('Network model test', function () {
-    'use strict';
-
     var mongoose = require('mongoose');
     var mockgoose = require('mockgoose');
     mockgoose(mongoose);
