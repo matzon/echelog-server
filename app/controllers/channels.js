@@ -1,7 +1,7 @@
 /*!
  * Module dependencies.
  */
-var utils = require('../utils')
+var utils = require('../utils');
 var mongoose = require('mongoose');
 var Channel = mongoose.model('Channel');
 
@@ -14,7 +14,7 @@ var Channel = mongoose.model('Channel');
  */
 exports.listChannels = function (req, res, next) {
     Channel.find({}, function (err, channels) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(channels);
         next();
     });
@@ -26,7 +26,7 @@ exports.listChannels = function (req, res, next) {
 exports.createChannel = function (req, res, next) {
     var channelModel = new Channel(req.body);
     utils.validateAndSave(res, next, channelModel, function(err) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(req.body);
         next();
     });
@@ -40,7 +40,7 @@ exports.findChannelById = function (req, res, next) {
         criteria: {_id: req.params.id}
     };
     Channel.findOne(options.criteria, function (err, channel) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(channel);
         next();
     });
@@ -54,7 +54,7 @@ exports.updateChannel = function (req, res, next) {
         "new": true
     };
     Channel.findOneAndUpdate({_id: req.params.id}, req.body, options, function (err, channel) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(channel);
         next();
     });
@@ -65,7 +65,7 @@ exports.updateChannel = function (req, res, next) {
  */
 exports.removeChannel = function (req, res, next) {
     Channel.findOneAndRemove({_id: req.params.id}, req.body, function (err, channel) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(channel);
         next();
     });

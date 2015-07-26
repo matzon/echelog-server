@@ -1,7 +1,7 @@
 /*!
  * Module dependencies.
  */
-var utils = require('../utils')
+var utils = require('../utils');
 var mongoose = require('mongoose');
 var LogEntry = mongoose.model('LogEntry');
 
@@ -26,7 +26,7 @@ exports.listLogEntriesByChannelAndDate = function (req, res, next) {
     };
 
     LogEntry.find(options.criteria, function (err, logentries) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(logentries);
         next();
     });
@@ -38,7 +38,7 @@ exports.listLogEntriesByChannelAndDate = function (req, res, next) {
 exports.createLogEntry = function (req, res, next) {
     var logEntryModel = new LogEntry(req.body);
     utils.validateAndSave(res, next, logEntryModel, function (err) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(req.body);
         next();
     });

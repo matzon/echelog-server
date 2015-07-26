@@ -1,0 +1,22 @@
+{
+  "predef": [
+    "describe",
+    "it",
+    "beforeEach",
+    "afterEach"
+  ],
+
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "laxbreak": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "boss": true,
+  "eqnull": true,
+  "node": true,
+  "strict": false
+}

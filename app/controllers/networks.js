@@ -1,7 +1,7 @@
 /*!
  * Module dependencies.
  */
-var utils = require('../utils')
+var utils = require('../utils');
 var mongoose = require('mongoose');
 var Network = mongoose.model('Network');
 
@@ -14,7 +14,7 @@ var Network = mongoose.model('Network');
  */
 exports.listNetworks = function (req, res, next) {
     Network.find({}, function (err, networks) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(networks);
         next();
     });
@@ -26,7 +26,7 @@ exports.listNetworks = function (req, res, next) {
 exports.createNetwork = function (req, res, next) {
     var networkModel = new Network(req.body);
     utils.validateAndSave(res, next, networkModel, function (err) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(req.body);
         next();
     });
@@ -40,7 +40,7 @@ exports.findNetworksById = function (req, res, next) {
         criteria: {_id: req.params.id}
     };
     Network.findOne(options.criteria, function (err, networks) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(networks);
         next();
     });
@@ -54,7 +54,7 @@ exports.updateNetwork = function (req, res, next) {
         "new": true
     };
     Network.findOneAndUpdate({_id: req.params.id}, req.body, options, function (err, network) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(network);
         next();
     });
@@ -65,7 +65,7 @@ exports.updateNetwork = function (req, res, next) {
  */
 exports.removeNetwork = function (req, res, next) {
     Network.findOneAndRemove({_id: req.params.id}, req.body, function (err, network) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.json(network);
         next();
     });

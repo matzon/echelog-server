@@ -1,3 +1,4 @@
+/* jshint -W030 */
 var expect = require('chai').expect;
 
 describe('Network model test', function () {
@@ -23,7 +24,7 @@ describe('Network model test', function () {
     describe('Create', function () {
         it('should be able to create a model', function (done) {
             NetworkModel.create({name: 'test'}, function (err, models) {
-                expect(err).not.to.be.ok;
+                expect(err).to.be.null;
                 expect(models).to.be.ok;
                 done(err);
             });
@@ -33,7 +34,7 @@ describe('Network model test', function () {
             NetworkModel.create({name: 'test'}, function (err, model) {
                 expect(model).not.to.be.undefined;
                 NetworkModel.findOne({_id: model._id}, function (err, result) {
-                    expect(err).not.to.be.ok;
+                    expect(err).to.be.null;
                     expect(result.name).to.equals('test');
                     done(err);
                 });
